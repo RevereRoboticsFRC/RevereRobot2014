@@ -162,7 +162,7 @@ RevereRobot2014_partialImage/$(MODE_DIR)/% : LIBPATH =
 RevereRobot2014_partialImage/$(MODE_DIR)/% : LIBS = 
 RevereRobot2014_partialImage/$(MODE_DIR)/% : OBJ_DIR := RevereRobot2014_partialImage/$(MODE_DIR)
 
-RevereRobot2014_partialImage/$(MODE_DIR)/Objects/RevereRobot2014/AutonModeTickerTask.o : $(PRJ_ROOT_DIR)/AutonModeTickerTask.cpp $(FORCE_FILE_BUILD)
+RevereRobot2014_partialImage/$(MODE_DIR)/Objects/RevereRobot2014/2014AutonModeTickerTask.o : $(PRJ_ROOT_DIR)/2014AutonModeTickerTask.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
@@ -202,7 +202,7 @@ RevereRobot2014_partialImage/$(MODE_DIR)/Objects/RevereRobot2014/WinchTickerTask
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
-OBJECTS_RevereRobot2014_partialImage = RevereRobot2014_partialImage/$(MODE_DIR)/Objects/RevereRobot2014/AutonModeTickerTask.o \
+OBJECTS_RevereRobot2014_partialImage = RevereRobot2014_partialImage/$(MODE_DIR)/Objects/RevereRobot2014/2014AutonModeTickerTask.o \
 	 RevereRobot2014_partialImage/$(MODE_DIR)/Objects/RevereRobot2014/DebugTickerTask.o \
 	 RevereRobot2014_partialImage/$(MODE_DIR)/Objects/RevereRobot2014/DriveSystem.o \
 	 RevereRobot2014_partialImage/$(MODE_DIR)/Objects/RevereRobot2014/Logger.o \
@@ -225,7 +225,7 @@ RevereRobot2014_partialImage/$(MODE_DIR)/RevereRobot2014_partialImage_clean :
 
 force : 
 
-DEP_FILES := RevereRobot2014_partialImage/$(MODE_DIR)/Objects/RevereRobot2014/AutonModeTickerTask.d RevereRobot2014_partialImage/$(MODE_DIR)/Objects/RevereRobot2014/DebugTickerTask.d RevereRobot2014_partialImage/$(MODE_DIR)/Objects/RevereRobot2014/DriveSystem.d \
+DEP_FILES := RevereRobot2014_partialImage/$(MODE_DIR)/Objects/RevereRobot2014/2014AutonModeTickerTask.d RevereRobot2014_partialImage/$(MODE_DIR)/Objects/RevereRobot2014/DebugTickerTask.d RevereRobot2014_partialImage/$(MODE_DIR)/Objects/RevereRobot2014/DriveSystem.d \
 	 RevereRobot2014_partialImage/$(MODE_DIR)/Objects/RevereRobot2014/Logger.d RevereRobot2014_partialImage/$(MODE_DIR)/Objects/RevereRobot2014/MyRobot.d RevereRobot2014_partialImage/$(MODE_DIR)/Objects/RevereRobot2014/RobotInput.d \
 	 RevereRobot2014_partialImage/$(MODE_DIR)/Objects/RevereRobot2014/RobotMaster.d RevereRobot2014_partialImage/$(MODE_DIR)/Objects/RevereRobot2014/RobotUtils.d RevereRobot2014_partialImage/$(MODE_DIR)/Objects/RevereRobot2014/Ticker.d \
 	 RevereRobot2014_partialImage/$(MODE_DIR)/Objects/RevereRobot2014/WinchTickerTask.d

@@ -1,5 +1,7 @@
 /*
  * AutonModeTickerTask.cpp
+ * 
+ * 2014 Auton mode ticker task. Drives forward for 5 seconds and then stops.
  *
  *  Created on: Feb 18, 2014
  *      Author: Vince

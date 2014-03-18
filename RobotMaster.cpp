@@ -7,10 +7,10 @@
 #include "RobotMaster.h"
 
 static const char* ROBOT_NAME = "L'AQUISHA";
-static const char* VERSION = "3.0";
+static const char* VERSION = "3.0_CC1";
 
 #include "DebugTickerTask.cpp"
-#include "AutonModeTickerTask.cpp"
+#include "2014AutonModeTickerTask.cpp"
 
 void OnReset(RobotMaster*);
 
@@ -22,9 +22,11 @@ RobotMaster::RobotMaster(DriverStation* ds, Watchdog* wd) {
 	m_watchdog = wd;
 	m_logger = new Logger(FINE, "Main");
 	m_driveSystem = new DriveSystem(this);
+	//	Only input: Joystick on port 1
 	m_joystick = new Joystick(1);
 	m_robotInput = new RobotInput(this);
 	m_ticker = new Ticker();
+	//	Debug/metrics task
 	m_ticker->m_debugTask = new DebugTickerTask(0, this, 10);
 }
 
@@ -56,13 +58,13 @@ void RobotMaster::OnAuton() {
 
 void RobotMaster::AutonTick() {
 	m_ticker->OnTick();
-	//	Do nothing else, the tick task will be running.
+	//	2014: Do nothing else, the tick task will be running.
 }
 
 void RobotMaster::OnTeleop() {
 	OnReset(this);
 	m_logger->Info("Starting teleoperated mode.");
-	//	Do nothing else.
+	//	2014: Do nothing else.
 }
 
 void RobotMaster::TeleopTick() {
@@ -74,12 +76,12 @@ void RobotMaster::TeleopTick() {
 void RobotMaster::OnTest() {
 	OnReset(this);
 	m_logger->Info("Entered test mode.");
-	//	Do nothing else.
+	//	2014: Do nothing else.
 }
 
 void RobotMaster::TestTick() {
 	m_ticker->OnTick();
-	//	Do nothing else.
+	//	2014: Do nothing else.
 }
 
 /**
